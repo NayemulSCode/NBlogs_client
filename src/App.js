@@ -6,7 +6,10 @@ import {
 import BlogDetails from "./Blogs/BlogDetails";
 import AddBlog from "./Dashboard/AddBlog";
 import Dashboard from "./Dashboard/Dashboard";
+import Login from "./Login/Login";
 import Main from "./Main/Main";
+import PrivateRoute from "./PrivateRouting/PrivateRoute";
+import PublicRoute from "./PrivateRouting/PublicRoute";
 function App() {
   return (
     <div className="">
@@ -15,15 +18,16 @@ function App() {
           <Route exact path="/">
             <Main />
           </Route>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
+          <PrivateRoute restricted={true} component={Dashboard} path="/dashboard" exact/>
+            
           <Route path="/addBlog">
             <AddBlog />
           </Route>
           <Route path="/blog/:id">
             <BlogDetails />
           </Route>
+          <PublicRoute restricted={false} component={Login} path="/signin"  exact/>
+            
         </Switch>
       </Router>
 

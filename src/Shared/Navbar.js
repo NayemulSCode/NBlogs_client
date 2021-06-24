@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 import { Transition } from "@headlessui/react";
 import { Link } from 'react-router-dom'
+import { isLogin, logout } from '../PrivateRouting/util';
 const Navbar = () => {
+  const [Login, setLogin] = useState(true);
+  const handleSignOut =()=>{
+    logout();
+    setLogin(false);
+  }
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div>
@@ -18,11 +24,6 @@ const Navbar = () => {
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
-                  <Link to="/dashboard"
-                    className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Dashboard
-                  </Link>
 
                   <Link to="/"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -30,26 +31,29 @@ const Navbar = () => {
                     Home
                   </Link>
 
-                  <Link
-                    to="/"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  <Link to="/dashboard"
+                    className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
-                    Projects
+                    Dashboard
                   </Link>
 
                   <Link
-                    to="/"
+                    to="/about"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
-                    Calendar
+                    About
                   </Link>
 
                   <Link
-                    to="/"
+                    to="/signin"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
-                    Reports
+                    {
+                      isLogin ? <span onClick={()=> handleSignOut()}>Signout</span>:<span>Signin</span>
+                      
+                    }
                   </Link>
+
                 </div>
               </div>
             </div>
@@ -128,24 +132,17 @@ const Navbar = () => {
                 </Link>
 
                 <Link
-                  to="/"
+                  to="/login"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Projects
+                  Login
                 </Link>
 
                 <Link
-                  to="/"
+                  to="/about"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Calendar
-                </Link>
-
-                <Link
-                  to="/"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  Reports
+                  About
                 </Link>
               </div>
             </div>

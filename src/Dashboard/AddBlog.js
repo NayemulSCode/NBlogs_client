@@ -30,7 +30,7 @@ const AddBlog = () => {
         })
         .then(res => res.json())
         .then(data => {
-            alert('room info added!!')
+            alert('blogs added!!')
             console.log(data)
         })
 

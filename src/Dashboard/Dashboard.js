@@ -1,10 +1,12 @@
 import React from 'react'
+import ManageBlog from './ManageBlog'
 import Sidebar from './Sidebar'
 
 const Dashboard = () => {
     return (
-        <div className="">
+        <div className="flex flex-no-wrap">
             <Sidebar />
+            <ManageBlog />
         </div>
     )
 }
