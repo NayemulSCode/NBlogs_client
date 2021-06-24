@@ -3,6 +3,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import BlogDetails from "./Blogs/BlogDetails";
 import AddBlog from "./Dashboard/AddBlog";
 import Dashboard from "./Dashboard/Dashboard";
 import Main from "./Main/Main";
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/addBlog">
             <AddBlog />
+          </Route>
+          <Route path="/blog/:id">
+            <BlogDetails />
           </Route>
         </Switch>
       </Router>
