@@ -3,11 +3,7 @@ import { Transition } from "@headlessui/react";
 import { Link } from 'react-router-dom'
 import { isLogin, logout } from '../PrivateRouting/util';
 const Navbar = () => {
-  const [Login, setLogin] = useState(true);
-  const handleSignOut =()=>{
-    logout();
-    setLogin(false);
-  }
+
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div>
@@ -17,8 +13,8 @@ const Navbar = () => {
             <div className="flex items-center">
               <div className="flex-shrink-0">
                 <img
-                  className="h-8 w-8"
-                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                  className="h-8 w-8 rounded"
+                  src="https://i.postimg.cc/VsGLKVkQ/Free-Sample-By-Wix.jpg"
                   alt="Workflow"
                 />
               </div>
@@ -48,10 +44,8 @@ const Navbar = () => {
                     to="/signin"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
-                    {
-                      isLogin ? <span onClick={()=> handleSignOut()}>Signout</span>:<span>Signin</span>
-                      
-                    }
+                      Signin
+
                   </Link>
 
                 </div>
@@ -132,7 +126,7 @@ const Navbar = () => {
                 </Link>
 
                 <Link
-                  to="/login"
+                  to="/signin"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Login
