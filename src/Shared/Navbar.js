@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { Transition } from "@headlessui/react";
 import { Link } from 'react-router-dom'
-import { isLogin, logout } from '../PrivateRouting/util';
 const Navbar = () => {
-
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div>

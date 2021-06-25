@@ -7,14 +7,13 @@ const BlogDetails = () => {
     let {id} = useParams()
     const [post, setPost] = useState({});
     const shortName = () =>{
-        let subName;
         if(post?.title){
-            return subName =  post?.title.slice(0,1);
+            return  post?.title.slice(0,1);
         }
     }
     const fetchData = async() =>{
         setIsLoading(true)
-        const response = await fetch(`http://localhost:5000/blog/${id}`)
+        const response = await fetch(`https://intense-waters-52527.herokuapp.com/blog/${id}`)
         const data = await response.json();
         setPost(data);
         setIsLoading(false)
@@ -34,7 +33,7 @@ const BlogDetails = () => {
             {
                         post.image ? <img style={{width:"300px", height: '300px'}} src={`data:image/png;base64,${post?.image.img}`} />
                         :
-                    <img style={{height: '300px'}} src={`http://localhost:5000/blogs${post.image}`} alt=""/>
+                    <img style={{height: '300px'}} src={`https://intense-waters-52527.herokuapp.com/blogs${post.image}`} alt=""/>
                     }
             </div>
             <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 const Blogs = (posts) => {
     const [isClick, setIsClick] = useState(false);
@@ -15,7 +15,7 @@ const Blogs = (posts) => {
             {
                 posts.posts?.image ? <img style={{width:"300px", height: '300px'}} src={`data:image/png;base64,${posts.posts?.image.img}`} />
                 :
-            <img style={{height: '300px'}} src={`http://localhost:5000/blogs${posts.image}`} alt=""/>
+            <img style={{height: '300px'}} src={`https://intense-waters-52527.herokuapp.com/blogs${posts.image}`} alt=""/>
             }
             </div>
         </Link>

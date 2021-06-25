@@ -1,6 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Link, Route,Switch } from 'react-router-dom'
-import AddBlog from './AddBlog'
+import { Link } from 'react-router-dom'
 import { isLogin, logout } from '../PrivateRouting/util';
 const Sidebar = () => {
     const handleSignOut =()=>{
@@ -13,7 +12,7 @@ const Sidebar = () => {
             <div className="w-64 absolute sm:relative bg-gray-800 shadow md:h-full flex-col justify-between flex">
                 <div className="px-8">
                     <div className="h-16 w-full flex items-center">
-                        <img className="rounded-3xl px-2" src="https://i.postimg.cc/VsGLKVkQ/Free-Sample-By-Wix.jpg" width={144} height={30} viewBox="0 0 144 30" />
+                        <img className="rounded-3xl px-2" src="https://i.postimg.cc/VsGLKVkQ/Free-Sample-By-Wix.jpg" width={144} height={30} viewBox="0 0 144 30" alt="logo" />
                             
                     </div>
                     <ul className="mt-12">

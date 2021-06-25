@@ -21,7 +21,7 @@ const Home = () => {
     // fetch data from end point 
     const fetchData = () =>{
         setLoading(true);
-        fetch('http://localhost:5000/blogs/')
+        fetch('https://intense-waters-52527.herokuapp.com/blogs/')
         .then(res => res.json())
         .then(posts => {
             setPost(posts)
