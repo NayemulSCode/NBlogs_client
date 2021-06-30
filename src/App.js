@@ -3,6 +3,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import About from "./About/About";
 import BlogDetails from "./Blogs/BlogDetails";
 import AddBlog from "./Dashboard/AddBlog";
 import Dashboard from "./Dashboard/Dashboard";
@@ -19,7 +20,6 @@ function App() {
             <Main />
           </Route>
           <PrivateRoute restricted={true} component={Dashboard} path="/dashboard" exact/>
-            
           <Route path="/addBlog">
             <AddBlog />
           </Route>
@@ -27,7 +27,9 @@ function App() {
             <BlogDetails />
           </Route>
           <PublicRoute restricted={false} component={Login} path="/signin"  exact/>
-            
+          <Route path="/about">
+            <About />
+          </Route>
         </Switch>
       </Router>
 
